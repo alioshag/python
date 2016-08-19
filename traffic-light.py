@@ -1,3 +1,4 @@
+#description: traffic light that change light when "space" key pressed event
 import turtle           # Tess becomes a traffic light.
 
 turtle.setup(400,500)
@@ -59,7 +60,6 @@ def advance_state_machine():
 
 # Bind the event handler to the space key.
 wn.onkey(advance_state_machine, "space")
-
 wn.listen()                      # Listen for events
 turtle.mainloop()
  
