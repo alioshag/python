@@ -6,6 +6,7 @@ wn.title("Handling keypresses!")     # Change the window title
 wn.bgcolor("lightgreen")             # Set the background color
 tess = turtle.Turtle()               # Create our favorite turtle
 
+pensize = tess.pensize()
 # The next four functions are our "event handlers".
 def h1():
    tess.forward(30)
@@ -28,6 +29,21 @@ def h6():
 def h7():
     tess.color("blue")
 
+def h8():
+    global pensize
+    if pensize < 20:
+       pensize+=1
+       wn.title(pensize)
+       tess.pensize(pensize)
+
+def h9():
+    global pensize
+    if pensize > 1:
+       pensize-=1
+       wn.title(pensize)
+       tess.pensize(pensize)       
+       
+
 # These lines "wire up" keypresses to the handlers we've defined.
 wn.onkey(h1, "Up")
 wn.onkey(h2, "Left")
@@ -36,6 +52,8 @@ wn.onkey(h4, "q")
 wn.onkey(h5, "r")
 wn.onkey(h6, "g")
 wn.onkey(h7, "b")
+wn.onkey(h8, "+")
+wn.onkey(h9, "-")
 
 # Now we need to tell the window to start listening for events,
 # If any of the keys that we're monitoring is pressed, its
